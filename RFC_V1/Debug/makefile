@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -15,6 +15,7 @@ RM := rm -rf
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/Libraries/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
 
@@ -64,8 +65,8 @@ all: main-build
 main-build: RFC_V1.elf secondary-outputs
 
 # Tool invocations
-RFC_V1.elf RFC_V1.map: $(OBJS) $(USER_OBJS) C:\Users\Chris\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "RFC_V1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Chris\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFC_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+RFC_V1.elf RFC_V1.map: $(OBJS) $(USER_OBJS) C:\Users\cdealba\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "RFC_V1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\cdealba\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFC_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

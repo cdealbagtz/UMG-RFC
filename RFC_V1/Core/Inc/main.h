@@ -31,7 +31,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "Libraries/MPU6050.h"
+#include "Libraries/BMP280.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
