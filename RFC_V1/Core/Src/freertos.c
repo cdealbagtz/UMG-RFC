@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "RTOS/RTOS.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,6 +53,7 @@ osThreadId Task_10msHandle;
 osThreadId Task_50msHandle;
 osThreadId Task_100msHandle;
 osThreadId Task_500msHandle;
+osThreadId Task_1msHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -64,6 +65,7 @@ void Task10ms(void const * argument);
 void Task50ms(void const * argument);
 void Task100ms(void const * argument);
 void Task500ms(void const * argument);
+void Task1ms(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -130,6 +132,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(Task_500ms, Task500ms, osPriorityNormal, 0, 128);
   Task_500msHandle = osThreadCreate(osThread(Task_500ms), NULL);
 
+  /* definition and creation of Task_1ms */
+  osThreadDef(Task_1ms, Task1ms, osPriorityNormal, 0, 128);
+  Task_1msHandle = osThreadCreate(osThread(Task_1ms), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -146,12 +152,12 @@ void MX_FREERTOS_Init(void) {
 void Task5ms(void const * argument)
 {
   /* USER CODE BEGIN Task5ms */
-
+	init_task_5ms();
   /* Infinite loop */
   for(;;)
   {
-
-    osDelay(1);
+	task_5ms();
+    osDelay(5);
   }
   /* USER CODE END Task5ms */
 }
@@ -166,9 +172,11 @@ void Task5ms(void const * argument)
 void Task10ms(void const * argument)
 {
   /* USER CODE BEGIN Task10ms */
+	init_task_10ms();
   /* Infinite loop */
   for(;;)
   {
+	task_10ms();
     osDelay(10);
   }
   /* USER CODE END Task10ms */
@@ -184,9 +192,11 @@ void Task10ms(void const * argument)
 void Task50ms(void const * argument)
 {
   /* USER CODE BEGIN Task50ms */
+	init_task_50ms();
   /* Infinite loop */
   for(;;)
   {
+	task_50ms();
     osDelay(50);
   }
   /* USER CODE END Task50ms */
@@ -202,9 +212,11 @@ void Task50ms(void const * argument)
 void Task100ms(void const * argument)
 {
   /* USER CODE BEGIN Task100ms */
+	init_task_100ms();
   /* Infinite loop */
   for(;;)
   {
+	task_100ms();
     osDelay(100);
   }
   /* USER CODE END Task100ms */
@@ -220,14 +232,34 @@ void Task100ms(void const * argument)
 void Task500ms(void const * argument)
 {
   /* USER CODE BEGIN Task500ms */
-	BMP280_init();
+	init_task_500ms();
   /* Infinite loop */
   for(;;)
   {
-	BMP280_calculate();
+	task_500ms();
     osDelay(500);
   }
   /* USER CODE END Task500ms */
+}
+
+/* USER CODE BEGIN Header_Task1ms */
+/**
+* @brief Function implementing the Task_1ms thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Task1ms */
+void Task1ms(void const * argument)
+{
+  /* USER CODE BEGIN Task1ms */
+	init_task_1ms();
+  /* Infinite loop */
+  for(;;)
+  {
+	task_1ms();
+    osDelay(1);
+  }
+  /* USER CODE END Task1ms */
 }
 
 /* Private application code --------------------------------------------------*/

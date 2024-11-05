@@ -8,18 +8,12 @@
 
 #include "Libraries/BMP280.h"
 
-
-uint8_t BMP280_ID;
-uint8_t BMP280_measuring;
-uint8_t BMP280_im_update;
+BMP280_t BMP280_data;
 
 uint16_t dig_T1, dig_P1;
 int16_t  dig_T2, dig_T3, dig_P2,dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9;
 
 int32_t T_raw, P_raw, t_fine;
-S32_t Temperature, Altitud;
-U32_t Presure;
-
 
 void BMP280_write(uint8_t Address, uint8_t Data){
 	BMP280_select();
@@ -47,12 +41,6 @@ void BMP280_config(void){
 
 void BMP280_reset(void){
 	BMP280_write(reset, 0xB6);
-}
-
-void BMP280_flags(void){
-	uint8_t Buffer   = BMP280_read(status);
-	BMP280_im_update = (Buffer&0x01);
-	BMP280_measuring = (Buffer&0x08)>>3;
 }
 
 void BMP280_calibrationData(void){
@@ -119,29 +107,29 @@ uint32_t BMP280_measureP(int32_t adc_P){
 	return (uint32_t)p;
 }
 
-int32_t BMP280_measureH(int32_t Pres, int32_t Temp){
+float BMP280_measureH(uint32_t Pres, int32_t Temp){
 	double var1, var2, h;
 
 	if(Pres == 0) return 0;
-	var1 = -log((((double)Pres)/100)/101325);
+	var1 = -log(((double)Pres)/101325);
 
 	if(var1 == 0) return 0;
 	var2 = 0.0341663/((((double)Temp)/100)+273.15);
-	h = (var1/var2)*100;
-	return (int32_t)h;
+	h = (float)(var1/var2);
+	return h;
 }
 
 void BMP280_init(void){
 	BMP280_unselect();
 	BMP280_config();
-	BMP280_ID = BMP280_read(0x89);
+	BMP280_data.ID = BMP280_read(0x89);
 	BMP280_calibrationData();
 }
 
 void BMP280_calculate(void){
 	BMP280_readRawValues();
-	Temperature.data = BMP280_measureT(T_raw);
-	Presure.data     = (BMP280_measureP(P_raw)*100)/256;
-	Altitud.data = BMP280_measureH(Presure.data, Temperature.data);
+	BMP280_data.Temp 				= BMP280_measureT(T_raw);
+	BMP280_data.Pressure    		= BMP280_measureP(P_raw)/256;
+	BMP280_data.Barometric_Altitude = BMP280_measureH(BMP280_data.Pressure, BMP280_data.Temp);
 }
 

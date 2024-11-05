@@ -1,7 +1,8 @@
-../Core/Src/freertos.c:77:6:vApplicationGetIdleTaskMemory	1
-../Core/Src/freertos.c:91:6:MX_FREERTOS_Init	1
-../Core/Src/freertos.c:146:6:Task5ms	1
-../Core/Src/freertos.c:166:6:Task10ms	1
-../Core/Src/freertos.c:184:6:Task50ms	1
-../Core/Src/freertos.c:202:6:Task100ms	1
-../Core/Src/freertos.c:220:6:Task500ms	1
+../Core/Src/freertos.c:79:6:vApplicationGetIdleTaskMemory	1
+../Core/Src/freertos.c:93:6:MX_FREERTOS_Init	1
+../Core/Src/freertos.c:152:6:Task5ms	1
+../Core/Src/freertos.c:172:6:Task10ms	1
+../Core/Src/freertos.c:192:6:Task50ms	1
+../Core/Src/freertos.c:212:6:Task100ms	1
+../Core/Src/freertos.c:232:6:Task500ms	1
+../Core/Src/freertos.c:252:6:Task1ms	1

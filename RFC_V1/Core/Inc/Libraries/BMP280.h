@@ -11,22 +11,6 @@
 #include "main.h"
 #include <math.h>
 
-
-typedef union U16{
-	uint16_t data;
-	uint8_t  bytes[2];
-}U16_t;
-
-typedef union S32{
-	int32_t data;
-	uint8_t  bytes[4];
-}S32_t;
-
-typedef union U32{
-	int32_t data;
-	uint8_t  bytes[4];
-}U32_t;
-
 extern SPI_HandleTypeDef hspi2;
 /*!
  * @def 	SPI_BMP280
@@ -60,7 +44,13 @@ enum BMP280_memoryMap{
 	temp_xlsb
 };
 
-uint8_t BMP280_read(uint8_t Address);
+typedef struct BMP280_Data{
+	uint8_t 	ID;
+	int32_t		Temp;
+	uint32_t	Pressure;
+	float 		Barometric_Altitude;
+}BMP280_t;
+
 
 void BMP280_init(void);
 void BMP280_calculate(void);

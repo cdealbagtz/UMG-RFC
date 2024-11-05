@@ -28,9 +28,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Libraries/BMP280.h"
-#include "Libraries/MPU6050.h"
-#include "Libraries/NRF24.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

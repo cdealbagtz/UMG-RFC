@@ -22,9 +22,12 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-Core/Src/BlackBox \
 Core/Src/Libraries \
-Core/Src/Telemetry \
+Core/Src/Modules/BlackBox \
+Core/Src/Modules/INS \
+Core/Src/Modules/Status \
+Core/Src/Modules/Telemetry \
+Core/Src/RTOS \
 Core/Src \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
