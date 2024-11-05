@@ -10,7 +10,7 @@
 //////////////////////////////INICIALIZACIÓN DE FUNCIONES///////////////////////////////////////
 
 void init_task_1ms(void){
-
+	MPU6050_init();
 }
 
 void init_task_5ms(void){
@@ -36,7 +36,7 @@ void init_task_500ms(void){
 //////////////////////////////FUNCIONES PERIODICAS///////////////////////////////////////
 
 void task_1ms(void){
-
+	MPU6050_getData();
 }
 
 void task_5ms(void){

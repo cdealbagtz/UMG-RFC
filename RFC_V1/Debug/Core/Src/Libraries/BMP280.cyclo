@@ -6,6 +6,6 @@
 ../Core/Src/Libraries/BMP280.c:69:6:BMP280_readRawValues	1
 ../Core/Src/Libraries/BMP280.c:81:9:BMP280_measureT	1
 ../Core/Src/Libraries/BMP280.c:90:10:BMP280_measureP	2
-../Core/Src/Libraries/BMP280.c:110:7:BMP280_measureH	3
+../Core/Src/Libraries/BMP280.c:110:10:BMP280_measureH	3
 ../Core/Src/Libraries/BMP280.c:122:6:BMP280_init	1
 ../Core/Src/Libraries/BMP280.c:129:6:BMP280_calculate	1

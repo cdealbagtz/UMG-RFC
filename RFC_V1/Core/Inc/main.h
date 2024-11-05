@@ -72,8 +72,6 @@ void Error_Handler(void);
 #define SD_CS_GPIO_Port GPIOB
 #define BMP_CS_Pin GPIO_PIN_2
 #define BMP_CS_GPIO_Port GPIOB
-#define IMU2_SCL_Pin GPIO_PIN_10
-#define IMU2_SCL_GPIO_Port GPIOB
 #define NRF_SCK_Pin GPIO_PIN_12
 #define NRF_SCK_GPIO_Port GPIOB
 #define BMP_SCK_Pin GPIO_PIN_13
@@ -92,16 +90,10 @@ void Error_Handler(void);
 #define uLed_GPIO_Port GPIOA
 #define NRF_CE_Pin GPIO_PIN_15
 #define NRF_CE_GPIO_Port GPIOA
-#define IMU2_SDA_Pin GPIO_PIN_3
-#define IMU2_SDA_GPIO_Port GPIOB
 #define NRF_MISO_Pin GPIO_PIN_4
 #define NRF_MISO_GPIO_Port GPIOB
 #define NRF_MOSI_Pin GPIO_PIN_5
 #define NRF_MOSI_GPIO_Port GPIOB
-#define IMU1_SCL_Pin GPIO_PIN_6
-#define IMU1_SCL_GPIO_Port GPIOB
-#define IMU1_SDA_Pin GPIO_PIN_7
-#define IMU1_SDA_GPIO_Port GPIOB
 #define MAG_SDA_Pin GPIO_PIN_8
 #define MAG_SDA_GPIO_Port GPIOB
 
