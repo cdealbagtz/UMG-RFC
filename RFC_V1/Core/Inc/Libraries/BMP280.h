@@ -48,9 +48,8 @@ typedef struct BMP280_Data{
 	uint8_t 	ID;
 	int32_t		Temp;
 	uint32_t	Pressure;
-	float 		Barometric_Altitude;
+	uint16_t 	Barometric_Altitude;
 }BMP280_t;
-
 
 void BMP280_init(void);
 void BMP280_calculate(void);

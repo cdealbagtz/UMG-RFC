@@ -107,7 +107,7 @@ uint32_t BMP280_measureP(int32_t adc_P){
 	return (uint32_t)p;
 }
 
-float BMP280_measureH(uint32_t Pres, int32_t Temp){
+uint16_t BMP280_measureH(uint32_t Pres, int32_t Temp){
 	double var1, var2, h;
 
 	if(Pres == 0) return 0;
@@ -115,8 +115,8 @@ float BMP280_measureH(uint32_t Pres, int32_t Temp){
 
 	if(var1 == 0) return 0;
 	var2 = 0.0341663/((((double)Temp)/100)+273.15);
-	h = (float)(var1/var2);
-	return h;
+	h = var1/var2;
+	return (uint16_t)h;
 }
 
 void BMP280_init(void){
