@@ -6,16 +6,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/Libraries/BMP280.c \
+../Core/Src/Libraries/Flash.c \
 ../Core/Src/Libraries/MPU6050.c \
 ../Core/Src/Libraries/NRF24.c 
 
 OBJS += \
 ./Core/Src/Libraries/BMP280.o \
+./Core/Src/Libraries/Flash.o \
 ./Core/Src/Libraries/MPU6050.o \
 ./Core/Src/Libraries/NRF24.o 
 
 C_DEPS += \
 ./Core/Src/Libraries/BMP280.d \
+./Core/Src/Libraries/Flash.d \
 ./Core/Src/Libraries/MPU6050.d \
 ./Core/Src/Libraries/NRF24.d 
 
@@ -27,7 +30,7 @@ Core/Src/Libraries/%.o Core/Src/Libraries/%.su Core/Src/Libraries/%.cyclo: ../Co
 clean: clean-Core-2f-Src-2f-Libraries
 
 clean-Core-2f-Src-2f-Libraries:
-	-$(RM) ./Core/Src/Libraries/BMP280.cyclo ./Core/Src/Libraries/BMP280.d ./Core/Src/Libraries/BMP280.o ./Core/Src/Libraries/BMP280.su ./Core/Src/Libraries/MPU6050.cyclo ./Core/Src/Libraries/MPU6050.d ./Core/Src/Libraries/MPU6050.o ./Core/Src/Libraries/MPU6050.su ./Core/Src/Libraries/NRF24.cyclo ./Core/Src/Libraries/NRF24.d ./Core/Src/Libraries/NRF24.o ./Core/Src/Libraries/NRF24.su
+	-$(RM) ./Core/Src/Libraries/BMP280.cyclo ./Core/Src/Libraries/BMP280.d ./Core/Src/Libraries/BMP280.o ./Core/Src/Libraries/BMP280.su ./Core/Src/Libraries/Flash.cyclo ./Core/Src/Libraries/Flash.d ./Core/Src/Libraries/Flash.o ./Core/Src/Libraries/Flash.su ./Core/Src/Libraries/MPU6050.cyclo ./Core/Src/Libraries/MPU6050.d ./Core/Src/Libraries/MPU6050.o ./Core/Src/Libraries/MPU6050.su ./Core/Src/Libraries/NRF24.cyclo ./Core/Src/Libraries/NRF24.d ./Core/Src/Libraries/NRF24.o ./Core/Src/Libraries/NRF24.su
 
 .PHONY: clean-Core-2f-Src-2f-Libraries
 

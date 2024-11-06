@@ -1,0 +1,30 @@
+/*
+ * Flash.h
+ *
+ *  Created on: Nov 5, 2024
+ *      Author: Chris
+ */
+
+#ifndef INC_LIBRARIES_FLASH_H_
+#define INC_LIBRARIES_FLASH_H_
+
+#include "stm32f4xx.h"
+#include <stdio.h>
+
+/*! \def FLASH_BANK_SELECTED
+    \brief Banco de memoria FLASH a utilizar.
+*/
+#define FLASH_BANK_SELECTED		FLASH_BANK_1
+/*! \def FLASH_clear_time
+    \brief Tiempo a esperar para el correcto borrado del contenido de una pagina.
+*/
+#define FLASH_clear_time		50000
+
+HAL_StatusTypeDef FLASH_unlock(void);
+HAL_StatusTypeDef FLASH_lock(void);
+HAL_StatusTypeDef FLASH_cleanPage(uint8_t ucNumPage);
+HAL_StatusTypeDef FLASH_read(uint32_t mem_address, uint16_t length, uint8_t *data);
+HAL_StatusTypeDef FLASH_write(uint32_t mem_address, uint16_t length, uint8_t *data);
+
+
+#endif /* INC_LIBRARIES_FLASH_H_ */

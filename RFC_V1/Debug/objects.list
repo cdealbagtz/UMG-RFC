@@ -1,4 +1,5 @@
 "./Core/Src/Libraries/BMP280.o"
+"./Core/Src/Libraries/Flash.o"
 "./Core/Src/Libraries/MPU6050.o"
 "./Core/Src/Libraries/NRF24.o"
 "./Core/Src/Modules/BlackBox/blackbox.o"

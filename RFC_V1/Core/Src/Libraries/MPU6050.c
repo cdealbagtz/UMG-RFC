@@ -12,7 +12,7 @@ MPU6050_t MPU6050;
 void MPU6050_calibration(void){
 	uint8_t Rec_Data[6];
 
-	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
+	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
 
 	MPU6050.S1.Offset.Ax = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
 	MPU6050.S1.Offset.Ay = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
@@ -20,7 +20,7 @@ void MPU6050_calibration(void){
 
 	memset(Rec_Data,0,6);
 
-	HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
+	HAL_I2C_Mem_Read(&hi2c2, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
 
 	MPU6050.S2.Offset.Ax = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
 	MPU6050.S2.Offset.Ay = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);

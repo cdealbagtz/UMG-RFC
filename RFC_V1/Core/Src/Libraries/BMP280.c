@@ -8,7 +8,7 @@
 
 #include "Libraries/BMP280.h"
 
-BMP280_t BMP280_data;
+BMP280_t BMP280;
 
 uint16_t dig_T1, dig_P1;
 int16_t  dig_T2, dig_T3, dig_P2,dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9;
@@ -30,6 +30,8 @@ uint8_t BMP280_read(uint8_t Address){
 	HAL_SPI_Transmit(SPI_BMP280, &Buffer, 1, 100);
 	HAL_SPI_Receive(SPI_BMP280, &Buffer, 1, 100);
 	BMP280_unselect();
+
+	BMP280.Temp = 2500;
 
 	return Buffer;
 }
@@ -122,14 +124,16 @@ uint16_t BMP280_measureH(uint32_t Pres, int32_t Temp){
 void BMP280_init(void){
 	BMP280_unselect();
 	BMP280_config();
-	BMP280_data.ID = BMP280_read(0x89);
+	BMP280.ID = BMP280_read(0x89);
 	BMP280_calibrationData();
+	BMP280_readRawValues();
+	BMP280.Temp_inicial = BMP280_measureT(T_raw);
 }
 
 void BMP280_calculate(void){
 	BMP280_readRawValues();
-	BMP280_data.Temp 				= BMP280_measureT(T_raw);
-	BMP280_data.Pressure    		= BMP280_measureP(P_raw)/256;
-	BMP280_data.Barometric_Altitude = BMP280_measureH(BMP280_data.Pressure, BMP280_data.Temp);
+	BMP280.Temp = BMP280_measureT(T_raw);
+	BMP280.Pressure    		= BMP280_measureP(P_raw)/256;
+	BMP280.Barometric_Altitude = BMP280_measureH(BMP280.Pressure, BMP280.Temp_inicial);
 }
 

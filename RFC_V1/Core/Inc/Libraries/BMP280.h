@@ -47,6 +47,7 @@ enum BMP280_memoryMap{
 typedef struct BMP280_Data{
 	uint8_t 	ID;
 	int32_t		Temp;
+	int32_t     Temp_inicial;
 	uint32_t	Pressure;
 	uint16_t 	Barometric_Altitude;
 }BMP280_t;
