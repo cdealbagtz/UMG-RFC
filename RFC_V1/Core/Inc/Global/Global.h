@@ -9,6 +9,10 @@
 #define INC_GLOBAL_GLOBAL_H_
 
 #include "stm32f4xx.h"
+#include "Libraries/BMP280.h"
+#include "Libraries/Flash.h"
+#include "Libraries/MPU6050.h"
+#include "Libraries/NRF24.h"
 
 typedef struct S16{
 	uint8_t	 bytes[2];

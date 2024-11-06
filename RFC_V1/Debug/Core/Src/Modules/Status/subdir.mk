@@ -5,15 +5,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/Modules/Status/commands.c \
 ../Core/Src/Modules/Status/flight_phase.c \
+../Core/Src/Modules/Status/memory.c \
 ../Core/Src/Modules/Status/power.c 
 
 OBJS += \
+./Core/Src/Modules/Status/commands.o \
 ./Core/Src/Modules/Status/flight_phase.o \
+./Core/Src/Modules/Status/memory.o \
 ./Core/Src/Modules/Status/power.o 
 
 C_DEPS += \
+./Core/Src/Modules/Status/commands.d \
 ./Core/Src/Modules/Status/flight_phase.d \
+./Core/Src/Modules/Status/memory.d \
 ./Core/Src/Modules/Status/power.d 
 
 
@@ -24,7 +30,7 @@ Core/Src/Modules/Status/%.o Core/Src/Modules/Status/%.su Core/Src/Modules/Status
 clean: clean-Core-2f-Src-2f-Modules-2f-Status
 
 clean-Core-2f-Src-2f-Modules-2f-Status:
-	-$(RM) ./Core/Src/Modules/Status/flight_phase.cyclo ./Core/Src/Modules/Status/flight_phase.d ./Core/Src/Modules/Status/flight_phase.o ./Core/Src/Modules/Status/flight_phase.su ./Core/Src/Modules/Status/power.cyclo ./Core/Src/Modules/Status/power.d ./Core/Src/Modules/Status/power.o ./Core/Src/Modules/Status/power.su
+	-$(RM) ./Core/Src/Modules/Status/commands.cyclo ./Core/Src/Modules/Status/commands.d ./Core/Src/Modules/Status/commands.o ./Core/Src/Modules/Status/commands.su ./Core/Src/Modules/Status/flight_phase.cyclo ./Core/Src/Modules/Status/flight_phase.d ./Core/Src/Modules/Status/flight_phase.o ./Core/Src/Modules/Status/flight_phase.su ./Core/Src/Modules/Status/memory.cyclo ./Core/Src/Modules/Status/memory.d ./Core/Src/Modules/Status/memory.o ./Core/Src/Modules/Status/memory.su ./Core/Src/Modules/Status/power.cyclo ./Core/Src/Modules/Status/power.d ./Core/Src/Modules/Status/power.o ./Core/Src/Modules/Status/power.su
 
 .PHONY: clean-Core-2f-Src-2f-Modules-2f-Status
 

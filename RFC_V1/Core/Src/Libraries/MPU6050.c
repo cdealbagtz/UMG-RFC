@@ -56,7 +56,8 @@ void MPU6050_init(void){
 	while((MPU6050.S1.ID != 104)&&(cont < 2)){
 		Data = 0x40;
 		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1, 1, &Data, 1, 1000);
-		HAL_Delay(1000);
+		MX_I2C1_Init();
+		HAL_Delay(100);
 		HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, WHOAMI, 1, &MPU6050.S2.ID, 1, 1000);
 		cont += 1;
 	}
@@ -64,6 +65,7 @@ void MPU6050_init(void){
 	while((MPU6050.S2.ID != 104)&&(cont < 2)){
 		Data = 0x40;
 		HAL_I2C_Mem_Write(&hi2c2, MPU6050_ADDR, PWR_MGMT_1, 1, &Data, 1, 1000);
+		MX_I2C2_Init();
 		HAL_Delay(100);
 		HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, WHOAMI, 1, &MPU6050.S2.ID, 1, 1000);
 		cont += 1;

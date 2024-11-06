@@ -52,7 +52,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Core/Inc/RTOS/RTOS.h ../Core/Inc/Libraries/BMP280.h \
+ ../Core/Inc/RTOS/RTOS.h ../Core/Inc/Global/Global.h \
+ ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/Flash.h \
  ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/Libraries/NRF24.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -111,6 +112,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Inc/RTOS/RTOS.h:
+../Core/Inc/Global/Global.h:
 ../Core/Inc/Libraries/BMP280.h:
+../Core/Inc/Libraries/Flash.h:
 ../Core/Inc/Libraries/MPU6050.h:
 ../Core/Inc/Libraries/NRF24.h:

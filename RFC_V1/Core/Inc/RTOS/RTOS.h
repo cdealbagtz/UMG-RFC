@@ -8,9 +8,7 @@
 #ifndef INC_RTOS_RTOS_H_
 #define INC_RTOS_RTOS_H_
 
-#include "Libraries/BMP280.h"
-#include "Libraries/MPU6050.h"
-#include "Libraries/NRF24.h"
+#include "Global/Global.h"
 
 void init_task_1ms(void);
 void init_task_5ms(void);
