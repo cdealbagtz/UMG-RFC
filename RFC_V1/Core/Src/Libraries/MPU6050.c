@@ -14,35 +14,35 @@ void MPU6050_calibration(void){
 
 	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
 
-	MPU6050.S1.Offset.Ax = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
-	MPU6050.S1.Offset.Ay = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
-	MPU6050.S1.Offset.Az = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - 2048;
+	MEMORY.str.MPU6050_1.Ax_Offset = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
+	MEMORY.str.MPU6050_1.Ay_Offset = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
+	MEMORY.str.MPU6050_1.Az_Offset = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - 2048;
 
 	memset(Rec_Data,0,6);
 
 	HAL_I2C_Mem_Read(&hi2c2, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
 
-	MPU6050.S2.Offset.Ax = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
-	MPU6050.S2.Offset.Ay = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
-	MPU6050.S2.Offset.Az = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - 2048;
+	MEMORY.str.MPU6050_2.Ax_Offset = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
+	MEMORY.str.MPU6050_2.Ay_Offset = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
+	MEMORY.str.MPU6050_2.Az_Offset = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - 2048;
 
 	memset(Rec_Data,0,6);
 
 	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, 0x43, 1, Rec_Data, 6, 1000);
 
-	MPU6050.S1.Offset.Gx = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
-	MPU6050.S1.Offset.Gy = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
-	MPU6050.S1.Offset.Gz = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
+	MEMORY.str.MPU6050_1.Gx_Offset = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
+	MEMORY.str.MPU6050_1.Gy_Offset = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
+	MEMORY.str.MPU6050_1.Gz_Offset = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
 
 	memset(Rec_Data,0,6);
 
 	HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, 0x43, 1, Rec_Data, 6, 1000);
 
-	MPU6050.S2.Offset.Gx = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
-	MPU6050.S2.Offset.Gy = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
-	MPU6050.S2.Offset.Gz = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
+	MEMORY.str.MPU6050_2.Gx_Offset = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
+	MEMORY.str.MPU6050_2.Gy_Offset = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
+	MEMORY.str.MPU6050_2.Gz_Offset = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]);
 
-
+	MEMORY_write();
 }
 
 void MPU6050_init(void){
@@ -84,8 +84,6 @@ void MPU6050_init(void){
 
 	HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, ACCEL_CONFIG, 1, &Data, 1, 1000);
 	HAL_I2C_Mem_Write(&hi2c2, MPU6050_ADDR, ACCEL_CONFIG, 1, &Data, 1, 1000);
-
-	MPU6050_calibration();
 }
 
 void MPU6050_accel(void){
@@ -94,9 +92,9 @@ void MPU6050_accel(void){
 
 	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
 
-	Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MPU6050.S1.Offset.Ax;
-	Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MPU6050.S1.Offset.Ay;
-	Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MPU6050.S1.Offset.Az;
+	Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MEMORY.str.MPU6050_1.Ax_Offset;
+	Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MEMORY.str.MPU6050_1.Ay_Offset;
+	Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MEMORY.str.MPU6050_1.Az_Offset;
 
 	MPU6050.S1.Ax = (float)Accel_X_RAW/2048.0 ;
 	MPU6050.S1.Ay = (float)Accel_Y_RAW/2048.0 ;
@@ -106,9 +104,9 @@ void MPU6050_accel(void){
 
 	HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, 0x3B, 1, Rec_Data, 6, 1);
 
-	Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MPU6050.S2.Offset.Ax;
-	Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MPU6050.S2.Offset.Ay;
-	Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MPU6050.S2.Offset.Az;
+	Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MEMORY.str.MPU6050_2.Ax_Offset;
+	Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MEMORY.str.MPU6050_2.Ay_Offset;
+	Accel_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MEMORY.str.MPU6050_2.Az_Offset;
 
 	MPU6050.S2.Ax = (float)Accel_X_RAW/2048.0;
 	MPU6050.S2.Ay = (float)Accel_Y_RAW/2048.0;
@@ -121,9 +119,9 @@ void MPU6050_gyro(void){
 
 	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, 0x43, 1, Rec_Data, 6, 1);
 
-	Gyro_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MPU6050.S1.Offset.Gx;
-	Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MPU6050.S1.Offset.Gy;
-	Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MPU6050.S1.Offset.Gz;
+	Gyro_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MEMORY.str.MPU6050_1.Gx_Offset;
+	Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MEMORY.str.MPU6050_1.Gy_Offset;
+	Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MEMORY.str.MPU6050_1.Gz_Offset;
 
 	MPU6050.S1.Gx = (float)Gyro_X_RAW/16.4;
 	MPU6050.S1.Gy = (float)Gyro_Y_RAW/16.4;
@@ -133,9 +131,9 @@ void MPU6050_gyro(void){
 
 	HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, 0x43, 1, Rec_Data, 6, 1);
 
-	Gyro_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MPU6050.S2.Offset.Gx;
-	Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MPU6050.S2.Offset.Gy;
-	Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MPU6050.S2.Offset.Gz;
+	Gyro_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]) - MEMORY.str.MPU6050_2.Gx_Offset;
+	Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]) - MEMORY.str.MPU6050_2.Gy_Offset;
+	Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data [5]) - MEMORY.str.MPU6050_2.Gz_Offset;
 
 	MPU6050.S2.Gx = (float)Gyro_X_RAW/16.4;
 	MPU6050.S2.Gy = (float)Gyro_Y_RAW/16.4;

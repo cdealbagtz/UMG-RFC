@@ -55,7 +55,7 @@ static uint32_t GetSector(uint32_t Address)
 }
 
 
-uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *Data, uint16_t numberofwords)
+uint32_t Flash_Write (uint32_t StartSectorAddress, uint32_t *Data, uint16_t numberofwords)
 {
 
 	static FLASH_EraseInitTypeDef EraseInitStruct;
@@ -111,7 +111,7 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *Data, uint16_t
 }
 
 
-void Flash_Read_Data (uint32_t StartSectorAddress, uint32_t *RxBuf, uint16_t numberofwords)
+void Flash_Read (uint32_t StartSectorAddress, uint32_t *RxBuf, uint16_t numberofwords)
 {
 	while (1)
 	{

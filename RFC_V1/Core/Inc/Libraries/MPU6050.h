@@ -11,6 +11,8 @@
 #include "stm32f4xx.h"
 #include <string.h>
 #include "i2c.h"
+#include "Modules/Status/memory.h"
+
 
 #define MPU6050_ADDR 0xD0
 
@@ -23,14 +25,9 @@ enum MPU6050_MemMap{
 	PWR_MGMT_1 	= 0x6B
 };
 
-typedef struct Offset{
-	int16_t Ax, Ay, Az, Gx, Gy, Gz;
-}Offset_t;
-
 typedef struct MPU6050_data{
 	uint8_t ID;
 	float Ax, Ay, Az, Gx, Gy, Gz;
-	Offset_t  Offset;
 }MPU6050_data_t;
 
 typedef struct MPU6050{
@@ -40,5 +37,6 @@ typedef struct MPU6050{
 
 void MPU6050_init(void);
 void MPU6050_getData(void);
+void MPU6050_calibration(void);
 
 #endif /* INC_LIBRARIES_MPU6050_H_ */

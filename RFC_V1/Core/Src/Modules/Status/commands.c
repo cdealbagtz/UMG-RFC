@@ -6,3 +6,8 @@
  */
 
 #include "Modules/Status/commands.h"
+
+
+void CMD_calibration(void){
+	MPU6050_calibration();
+}

@@ -14,6 +14,7 @@
 #include "Libraries/MPU6050.h"
 #include "Libraries/NRF24.h"
 
+
 typedef struct S16{
 	uint8_t	 bytes[2];
 	int16_t inter;

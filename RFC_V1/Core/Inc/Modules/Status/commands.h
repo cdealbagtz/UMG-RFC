@@ -10,4 +10,6 @@
 
 #include "Global/Global.h"
 
+void CMD_calibration(void);
+
 #endif /* INC_MODULES_STATUS_COMMANDS_H_ */

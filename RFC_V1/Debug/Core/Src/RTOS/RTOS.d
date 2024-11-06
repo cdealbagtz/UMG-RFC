@@ -36,8 +36,9 @@ Core/Src/RTOS/RTOS.o: ../Core/Src/RTOS/RTOS.c ../Core/Inc/RTOS/RTOS.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/Libraries/BMP280.h ../Core/Inc/main.h \
  ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/i2c.h ../Core/Inc/main.h \
- ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/Flash.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/Libraries/NRF24.h
+ ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Libraries/Flash.h \
+ ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/MPU6050.h \
+ ../Core/Inc/Libraries/NRF24.h
 ../Core/Inc/RTOS/RTOS.h:
 ../Core/Inc/Global/Global.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
@@ -79,7 +80,8 @@ Core/Src/RTOS/RTOS.o: ../Core/Src/RTOS/RTOS.c ../Core/Inc/RTOS/RTOS.h \
 ../Core/Inc/Libraries/MPU6050.h:
 ../Core/Inc/i2c.h:
 ../Core/Inc/main.h:
-../Core/Inc/Libraries/BMP280.h:
+../Core/Inc/Modules/Status/memory.h:
 ../Core/Inc/Libraries/Flash.h:
+../Core/Inc/Libraries/BMP280.h:
 ../Core/Inc/Libraries/MPU6050.h:
 ../Core/Inc/Libraries/NRF24.h:

@@ -1,5 +1,5 @@
 Core/Src/Modules/Status/memory.o: ../Core/Src/Modules/Status/memory.c \
- ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Global/Global.h \
+ ../Core/Inc/Modules/Status/memory.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -34,12 +34,8 @@ Core/Src/Modules/Status/memory.o: ../Core/Src/Modules/Status/memory.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/Libraries/BMP280.h ../Core/Inc/main.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/i2c.h ../Core/Inc/main.h \
- ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/Flash.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/Libraries/NRF24.h
+ ../Core/Inc/Libraries/Flash.h
 ../Core/Inc/Modules/Status/memory.h:
-../Core/Inc/Global/Global.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -74,12 +70,4 @@ Core/Src/Modules/Status/memory.o: ../Core/Src/Modules/Status/memory.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/Libraries/BMP280.h:
-../Core/Inc/main.h:
-../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/i2c.h:
-../Core/Inc/main.h:
-../Core/Inc/Libraries/BMP280.h:
 ../Core/Inc/Libraries/Flash.h:
-../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/Libraries/NRF24.h:
