@@ -17,31 +17,31 @@
  * @def 	SPI_NRF24
  * @brief 	Almacena el puntero a la configuración del SPI para el NF24
  */
-#define SPI_NRF24				&hspi1
+#define SPI_NRF24				&hspi3
 
 /*!
  * @def 	NRF24_select()
  * @brief 	Definición para dar un valor de bajo al pin de CSN del NRF24
  */
-#define NRF24_select()			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET)
+#define NRF24_select()			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET)
 
 /*!
  * @def 	NRF24_unselect()
  * @brief 	Definición para dar un valor de alto al pin de CSN del NRF24
  */
-#define NRF24_unselect()		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET)
+#define NRF24_unselect()		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET)
 
 /*!
  * @def 	NRF24_Enable()
  * @brief 	Definición para dar un valor alto al pin de activación del NRF24
  */
-#define NRF24_Enable()			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET)
+#define NRF24_Enable()			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET)
 
 /*!
  * @def 	NRF24_Disable()
  * @brief 	Definición para dar un valor bajo al pin de activación del NRF24
  */
-#define NRF24_Disable()			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET)
+#define NRF24_Disable()			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET)
 
 
 
