@@ -1,5 +1,6 @@
 ../Core/Src/Libraries/MPU6050.c:12:6:MPU6050_calibration	1
 ../Core/Src/Libraries/MPU6050.c:48:6:MPU6050_init	5
-../Core/Src/Libraries/MPU6050.c:89:6:MPU6050_accel	1
-../Core/Src/Libraries/MPU6050.c:116:6:MPU6050_gyro	1
-../Core/Src/Libraries/MPU6050.c:143:6:MPU6050_getData	1
+../Core/Src/Libraries/MPU6050.c:88:6:MPU6050_accel	1
+../Core/Src/Libraries/MPU6050.c:115:6:MPU6050_gyro	1
+../Core/Src/Libraries/MPU6050.c:141:6:MPU6050_Status	1
+../Core/Src/Libraries/MPU6050.c:150:6:MPU6050_getData	1

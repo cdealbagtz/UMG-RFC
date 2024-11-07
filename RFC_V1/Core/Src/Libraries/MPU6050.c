@@ -49,13 +49,12 @@ void MPU6050_init(void){
 	uint8_t cont = 0;
 	uint8_t Data = 0;
 
-	HAL_Delay(100);
 	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, WHOAMI, 1, &MPU6050.S1.ID, 1,1);
 	HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, WHOAMI, 1, &MPU6050.S2.ID, 1,1);
 
 	while((MPU6050.S1.ID != 104)&&(cont < 2)){
 		Data = 0x40;
-		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1, 1, &Data, 1, 1000);
+		//HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1, 1, &Data, 1, 1000);
 		MX_I2C1_Init();
 		HAL_Delay(100);
 		HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, WHOAMI, 1, &MPU6050.S2.ID, 1, 1000);
@@ -139,8 +138,17 @@ void MPU6050_gyro(void){
 	MPU6050.S2.Gy = (float)Gyro_Y_RAW/16.4;
 	MPU6050.S2.Gz = (float)Gyro_Z_RAW/16.4;
 }
+void MPU6050_Status(void){
+	uint8_t buffer = 0;
+	HAL_I2C_Mem_Read (&hi2c1, MPU6050_ADDR, WHOAMI, 1, &buffer, 1,1);
+	MPU6050.S1.ID = buffer;
 
+	buffer = 0;
+	HAL_I2C_Mem_Read (&hi2c2, MPU6050_ADDR, WHOAMI, 1, &buffer, 1,1);
+	MPU6050.S2.ID = buffer;
+}
 void MPU6050_getData(void){
+	MPU6050_Status();
 	MPU6050_accel();
 	MPU6050_gyro();
 }

@@ -17,7 +17,7 @@
 #define MPU6050_ADDR 0xD0
 
 enum MPU6050_MemMap{
-	CONFIG		= 0x1A,
+	MPU_CONFIG	= 0x1A,
 	GYRO_CONFIG = 0x1B,
 	ACCEL_CONFIG= 0x1C,
 	SMPLRT_DIV 	= 0x19,
@@ -34,6 +34,8 @@ typedef struct MPU6050{
 	MPU6050_data_t S1;
 	MPU6050_data_t S2;
 }MPU6050_t;
+
+extern MPU6050_t MPU6050;
 
 void MPU6050_init(void);
 void MPU6050_getData(void);

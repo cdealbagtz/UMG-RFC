@@ -9,6 +9,7 @@
 #define INC_RTOS_RTOS_H_
 
 #include "Global/Global.h"
+#include "Modules/INS/attitude.h"
 
 void init_task_1ms(void);
 void init_task_5ms(void);

@@ -16,6 +16,7 @@ void init_task_1ms(void){
 
 void init_task_5ms(void){
 	BMP280_init();
+	MPU6050_calibration();		//TODO Quitar función cuando se tenga calibración por comandos
 }
 
 void init_task_10ms(void){
@@ -37,7 +38,7 @@ void init_task_500ms(void){
 //////////////////////////////FUNCIONES PERIODICAS///////////////////////////////////////
 
 void task_1ms(void){
-	MPU6050_getData();
+	ATTS_getAcc();
 }
 
 void task_5ms(void){

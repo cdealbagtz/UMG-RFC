@@ -1,0 +1,2 @@
+../Core/Src/Modules/INS/attitude.c:12:6:ATTS_getAcc	4
+../Core/Src/Modules/INS/attitude.c:43:6:ATTS_getATT	1

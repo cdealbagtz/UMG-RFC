@@ -5,18 +5,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/Modules/INS/actitude.c \
 ../Core/Src/Modules/INS/altitude.c \
+../Core/Src/Modules/INS/attitude.c \
 ../Core/Src/Modules/INS/geo.c 
 
 OBJS += \
-./Core/Src/Modules/INS/actitude.o \
 ./Core/Src/Modules/INS/altitude.o \
+./Core/Src/Modules/INS/attitude.o \
 ./Core/Src/Modules/INS/geo.o 
 
 C_DEPS += \
-./Core/Src/Modules/INS/actitude.d \
 ./Core/Src/Modules/INS/altitude.d \
+./Core/Src/Modules/INS/attitude.d \
 ./Core/Src/Modules/INS/geo.d 
 
 
@@ -27,7 +27,7 @@ Core/Src/Modules/INS/%.o Core/Src/Modules/INS/%.su Core/Src/Modules/INS/%.cyclo:
 clean: clean-Core-2f-Src-2f-Modules-2f-INS
 
 clean-Core-2f-Src-2f-Modules-2f-INS:
-	-$(RM) ./Core/Src/Modules/INS/actitude.cyclo ./Core/Src/Modules/INS/actitude.d ./Core/Src/Modules/INS/actitude.o ./Core/Src/Modules/INS/actitude.su ./Core/Src/Modules/INS/altitude.cyclo ./Core/Src/Modules/INS/altitude.d ./Core/Src/Modules/INS/altitude.o ./Core/Src/Modules/INS/altitude.su ./Core/Src/Modules/INS/geo.cyclo ./Core/Src/Modules/INS/geo.d ./Core/Src/Modules/INS/geo.o ./Core/Src/Modules/INS/geo.su
+	-$(RM) ./Core/Src/Modules/INS/altitude.cyclo ./Core/Src/Modules/INS/altitude.d ./Core/Src/Modules/INS/altitude.o ./Core/Src/Modules/INS/altitude.su ./Core/Src/Modules/INS/attitude.cyclo ./Core/Src/Modules/INS/attitude.d ./Core/Src/Modules/INS/attitude.o ./Core/Src/Modules/INS/attitude.su ./Core/Src/Modules/INS/geo.cyclo ./Core/Src/Modules/INS/geo.d ./Core/Src/Modules/INS/geo.o ./Core/Src/Modules/INS/geo.su
 
 .PHONY: clean-Core-2f-Src-2f-Modules-2f-INS
 
