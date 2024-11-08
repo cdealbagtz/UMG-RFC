@@ -31,6 +31,7 @@ typedef struct Flash_info{
 typedef union{
 	Flash_Info_t str;
 	uint32_t word[SIZEOFSTR];
+	uint8_t bytes[SIZEOFSTR*4];
 }MEMORY_u;
 
 

@@ -9,5 +9,5 @@
 
 
 void CMD_calibration(void){
-	MPU6050_calibration();
+
 }

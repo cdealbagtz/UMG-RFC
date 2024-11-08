@@ -42,9 +42,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/i2c.h ../Core/Inc/main.h \
  ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Libraries/Flash.h \
- ../Core/Inc/Libraries/BMP280.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
@@ -55,8 +53,9 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Core/Inc/RTOS/RTOS.h ../Core/Inc/Global/Global.h \
  ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/MPU6050.h \
+ ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/Modules/Status/memory.h \
  ../Core/Inc/Libraries/NRF24.h ../Core/Inc/spi.h \
- ../Core/Inc/Modules/INS/attitude.h
+ ../Core/Inc/Modules/INS/attitude.h ../Core/Inc/Modules/Status/status.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -101,12 +100,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/i2c.h:
-../Core/Inc/main.h:
 ../Core/Inc/Modules/Status/memory.h:
 ../Core/Inc/Libraries/Flash.h:
-../Core/Inc/Libraries/BMP280.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
@@ -119,6 +114,10 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/Global/Global.h:
 ../Core/Inc/Libraries/BMP280.h:
 ../Core/Inc/Libraries/MPU6050.h:
+../Core/Inc/i2c.h:
+../Core/Inc/main.h:
+../Core/Inc/Modules/Status/memory.h:
 ../Core/Inc/Libraries/NRF24.h:
 ../Core/Inc/spi.h:
 ../Core/Inc/Modules/INS/attitude.h:
+../Core/Inc/Modules/Status/status.h:

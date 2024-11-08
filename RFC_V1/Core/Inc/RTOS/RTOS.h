@@ -10,6 +10,8 @@
 
 #include "Global/Global.h"
 #include "Modules/INS/attitude.h"
+#include "Modules/Status/memory.h"
+#include "Modules/Status/status.h"
 
 void init_task_1ms(void);
 void init_task_5ms(void);

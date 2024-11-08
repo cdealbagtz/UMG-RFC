@@ -10,6 +10,7 @@
 "./Core/Src/Modules/Status/flight_phase.o"
 "./Core/Src/Modules/Status/memory.o"
 "./Core/Src/Modules/Status/power.o"
+"./Core/Src/Modules/Status/status.o"
 "./Core/Src/Modules/Telemetry/payload.o"
 "./Core/Src/Modules/Telemetry/telemetry.o"
 "./Core/Src/RTOS/RTOS.o"
