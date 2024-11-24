@@ -55,7 +55,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/MPU6050.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/Modules/Status/memory.h \
  ../Core/Inc/Libraries/NRF24.h ../Core/Inc/spi.h \
- ../Core/Inc/Modules/INS/attitude.h ../Core/Inc/Modules/Status/status.h
+ ../Core/Inc/Modules/INS/attitude.h ../Core/Inc/Modules/Status/status.h \
+ ../Core/Inc/Modules/Telemetry/payload.h ../Core/Inc/tim.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -121,3 +122,5 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/spi.h:
 ../Core/Inc/Modules/INS/attitude.h:
 ../Core/Inc/Modules/Status/status.h:
+../Core/Inc/Modules/Telemetry/payload.h:
+../Core/Inc/tim.h:

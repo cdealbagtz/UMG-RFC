@@ -7,6 +7,8 @@
 
 #include "RTOS/RTOS.h"
 
+uint16_t test = 300;
+
 //////////////////////////////INICIALIZACIÓN DE FUNCIONES///////////////////////////////////////
 
 void init_task_1ms(void){
@@ -15,6 +17,7 @@ void init_task_1ms(void){
 
 void init_task_5ms(void){
 	BMP280_init();
+
 
 }
 
@@ -46,16 +49,18 @@ void task_5ms(void){
 	get_ATTS(&MPU6050);
 
 }
-uint8_t test =0;
+
 void task_10ms(void){
-	if(test == 1){
-		MPU6050_calibration();
-		test = 0;
-	}
+	//if(test == 1){
+	//	MPU6050_calibration();
+	//	test = 0;
+	//}
 }
 
 void task_50ms(void){
-
+	DeployParachute();
+	  TIM2->CCR4 = test;
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 }
 
 void task_100ms(void){

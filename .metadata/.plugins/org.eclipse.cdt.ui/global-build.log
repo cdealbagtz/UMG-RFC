@@ -1,36 +1,77 @@
-19:51:08 **** Incremental Build of configuration Debug for project RFC_V1 ****
+18:42:51 **** Incremental Build of configuration Debug for project RFC_V1 ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/Libraries/Flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Libraries/Flash.d" -MT"Core/Src/Libraries/Flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Libraries/Flash.o"
-../Core/Src/Libraries/Flash.c: In function 'FLASH_cleanPage':
-../Core/Src/Libraries/Flash.c:54:9: warning: implicit declaration of function 'FLASH_PageErase' [-Wimplicit-function-declaration]
-   54 |         FLASH_PageErase(ucNumPage, FLASH_BANK_SELECTED);
-      |         ^~~~~~~~~~~~~~~
-In file included from ../Core/Inc/Libraries/Flash.h:11,
-                 from ../Core/Src/Libraries/Flash.c:8:
-../Core/Src/Libraries/Flash.c:55:31: error: 'FLASH_CR_PER' undeclared (first use in this function); did you mean 'FLASH_CR_SER'?
-   55 |         CLEAR_BIT(FLASH->CR, (FLASH_CR_PER));
-      |                               ^~~~~~~~~~~~
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213:43: note: in definition of macro 'CLEAR_BIT'
-  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
-      |                                           ^~~
-../Core/Src/Libraries/Flash.c:55:31: note: each undeclared identifier is reported only once for each function it appears in
-   55 |         CLEAR_BIT(FLASH->CR, (FLASH_CR_PER));
-      |                               ^~~~~~~~~~~~
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213:43: note: in definition of macro 'CLEAR_BIT'
-  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
-      |                                           ^~~
-../Core/Src/Libraries/Flash.c: In function 'FLASH_write':
-../Core/Src/Libraries/Flash.c:95:9: error: unknown type name 'u64_t'
-   95 |         u64_t buffer;
-      |         ^~~~~
-../Core/Src/Libraries/Flash.c:100:31: error: request for member 'byte' in something not a structure or union
-  100 |                         buffer.byte[ucNumByte] = data[ucNumWord + ucNumByte];
-      |                               ^
-../Core/Src/Libraries/Flash.c:103:96: error: request for member 'u64' in something not a structure or union
-  103 |                 HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, mem_address + ucNumWord, buffer.u64);
-      |                                                                                                ^
-../Core/Src/Libraries/Flash.c:95:15: warning: variable 'buffer' set but not used [-Wunused-but-set-variable]
-   95 |         u64_t buffer;
-      |               ^~~~~~
-make: *** [Core/Src/Libraries/subdir.mk:28: Core/Src/Libraries/Flash.o] Error 1
-"make -j20 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size  RFC_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50148	    264	  20136	  70548	  11394	RFC_V1.elf
+Finished building: default.size.stdout
+ 
+18:42:54 **** Incremental Build of configuration Debug for project RFC_V1 ****
+make -j20 all 
+arm-none-eabi-size  RFC_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50148	    264	  20136	  70548	  11394	RFC_V1.elf
+Finished building: default.size.stdout
+ 
+18:49:05 **** Incremental Build of configuration Debug for project RFC_V1 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "RFC_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Chris\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFC_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: RFC_V1.elf has a LOAD segment with RWX permissions
+Finished building target: RFC_V1.elf
+ 
+arm-none-eabi-size  RFC_V1.elf 
+arm-none-eabi-objdump -h -S RFC_V1.elf  > "RFC_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  50148	    264	  20136	  70548	  11394	RFC_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFC_V1.list
+ 
+18:52:14 **** Incremental Build of configuration Debug for project RFC_V1 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/RTOS/RTOS.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/RTOS/RTOS.d" -MT"Core/Src/RTOS/RTOS.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/RTOS/RTOS.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "RFC_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Chris\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFC_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: RFC_V1.elf has a LOAD segment with RWX permissions
+Finished building target: RFC_V1.elf
+ 
+arm-none-eabi-size  RFC_V1.elf 
+arm-none-eabi-objdump -h -S RFC_V1.elf  > "RFC_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  47844	    264	  20088	  68196	  10a64	RFC_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFC_V1.list
+ 
+18:53:06 **** Incremental Build of configuration Debug for project RFC_V1 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/RTOS/RTOS.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/RTOS/RTOS.d" -MT"Core/Src/RTOS/RTOS.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/RTOS/RTOS.o"
+arm-none-eabi-gcc -o "RFC_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Chris\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFC_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: RFC_V1.elf has a LOAD segment with RWX permissions
+Finished building target: RFC_V1.elf
+ 
+arm-none-eabi-size  RFC_V1.elf 
+arm-none-eabi-objdump -h -S RFC_V1.elf  > "RFC_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  47844	    264	  20088	  68196	  10a64	RFC_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFC_V1.list
+ 
+18:58:08 **** Incremental Build of configuration Debug for project RFC_V1 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/RTOS/RTOS.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/RTOS/RTOS.d" -MT"Core/Src/RTOS/RTOS.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/RTOS/RTOS.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "RFC_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Chris\Documents\UMG-RFC\RFC_V1\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFC_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: RFC_V1.elf has a LOAD segment with RWX permissions
+Finished building target: RFC_V1.elf
+ 
+arm-none-eabi-size  RFC_V1.elf 
+arm-none-eabi-objdump -h -S RFC_V1.elf  > "RFC_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  47844	    272	  20088	  68204	  10a6c	RFC_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFC_V1.list
+ 
