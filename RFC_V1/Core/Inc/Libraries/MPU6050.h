@@ -9,7 +9,7 @@
 #define INC_LIBRARIES_MPU6050_H_
 
 #include <stdint.h>
-#include "i2c.h"
+#include "main.h"
 #include <math.h>
 #include "Modules/Status/memory.h"
 

@@ -9,9 +9,10 @@
 #define INC_LIBRARIES_NRF24_H_
 
 #include "stm32f4xx.h"
-#include "spi.h"
+#include "main.h"
 #include <string.h>
 
+extern SPI_HandleTypeDef hspi3;
 
 /*!
  * @def 	SPI_NRF24

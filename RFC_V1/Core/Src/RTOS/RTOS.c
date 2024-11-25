@@ -55,6 +55,7 @@ void task_10ms(void){
 	//	MPU6050_calibration();
 	//	test = 0;
 	//}
+	BlackBox_SaveData();
 }
 
 void task_50ms(void){
@@ -65,6 +66,8 @@ void task_50ms(void){
 void task_100ms(void){
 
 }
+
+extern TIM_HandleTypeDef htim2;
 
 void task_500ms(void){
 	  TIM2->CCR4 = test;

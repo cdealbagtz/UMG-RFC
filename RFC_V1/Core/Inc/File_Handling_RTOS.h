@@ -55,7 +55,7 @@ void Check_SD_Space (void);
  */
 FRESULT Update_File (char *name, char *data);
 
-
+FRESULT Open_Dir (char *name);
 
 
 #endif /* FILE_HANDLING_RTOS_H_ */

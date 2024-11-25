@@ -9,7 +9,7 @@
 #define INC_MODULES_TELEMETRY_PAYLOAD_H_
 
 #include "Global/Global.h"
-#include "tim.h"
+#include "main.h"
 #include "stdlib.h"
 
 void DeployParachute(void);

@@ -1,7 +1,7 @@
-../Core/Src/Libraries/MPU6050.c:16:6:MPU6050_getPromModule	7
-../Core/Src/Libraries/MPU6050.c:63:9:MPU6050_status	5
-../Core/Src/Libraries/MPU6050.c:97:6:MPU6050_memoryRefresh	1
-../Core/Src/Libraries/MPU6050.c:115:6:MPU6050_calibration	1
-../Core/Src/Libraries/MPU6050.c:141:9:MPU6050_Init_Module	2
-../Core/Src/Libraries/MPU6050.c:173:6:MPU6050_Read_All	1
-../Core/Src/Libraries/MPU6050.c:201:6:MPU6050_Init	1
+../Core/Src/Libraries/MPU6050.c:19:6:MPU6050_getPromModule	7
+../Core/Src/Libraries/MPU6050.c:66:9:MPU6050_status	5
+../Core/Src/Libraries/MPU6050.c:100:6:MPU6050_memoryRefresh	1
+../Core/Src/Libraries/MPU6050.c:118:6:MPU6050_calibration	1
+../Core/Src/Libraries/MPU6050.c:144:9:MPU6050_Init_Module	2
+../Core/Src/Libraries/MPU6050.c:176:6:MPU6050_Read_All	1
+../Core/Src/Libraries/MPU6050.c:204:6:MPU6050_Init	1

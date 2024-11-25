@@ -36,9 +36,8 @@ Core/Src/Modules/Status/commands.o: ../Core/Src/Modules/Status/commands.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/Libraries/BMP280.h ../Core/Inc/main.h \
  ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Libraries/Flash.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/i2c.h ../Core/Inc/main.h \
- ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Libraries/NRF24.h \
- ../Core/Inc/spi.h
+ ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/Modules/Status/memory.h \
+ ../Core/Inc/Libraries/NRF24.h
 ../Core/Inc/Modules/Status/commands.h:
 ../Core/Inc/Global/Global.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
@@ -80,8 +79,5 @@ Core/Src/Modules/Status/commands.o: ../Core/Src/Modules/Status/commands.c \
 ../Core/Inc/Modules/Status/memory.h:
 ../Core/Inc/Libraries/Flash.h:
 ../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/i2c.h:
-../Core/Inc/main.h:
 ../Core/Inc/Modules/Status/memory.h:
 ../Core/Inc/Libraries/NRF24.h:
-../Core/Inc/spi.h:

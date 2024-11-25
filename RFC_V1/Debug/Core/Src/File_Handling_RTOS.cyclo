@@ -8,4 +8,5 @@
 ../Core/Src/File_Handling_RTOS.c:273:9:Update_File	5
 ../Core/Src/File_Handling_RTOS.c:331:9:Remove_File	3
 ../Core/Src/File_Handling_RTOS.c:363:9:Create_Dir	2
-../Core/Src/File_Handling_RTOS.c:380:6:Check_SD_Space	1
+../Core/Src/File_Handling_RTOS.c:382:9:Open_Dir	1
+../Core/Src/File_Handling_RTOS.c:389:6:Check_SD_Space	1

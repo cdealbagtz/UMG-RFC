@@ -377,6 +377,15 @@ FRESULT Create_Dir (char *name)
     return fresult;
 }
 
+
+
+FRESULT Open_Dir (char *name)
+{
+	fresult = f_chdir(name);
+
+    return fresult;
+}
+
 void Check_SD_Space (void)
 {
     /* Check free space */

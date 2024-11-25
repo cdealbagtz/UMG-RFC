@@ -44,6 +44,7 @@
 ../Middlewares/Third_Party/FatFs/src/ff.c:3611:9:f_write	56	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:3732:9:f_sync	32	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:3813:9:f_close	24	static
+../Middlewares/Third_Party/FatFs/src/ff.c:3869:9:f_chdir	80	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4001:9:f_lseek	72	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4162:9:f_opendir	32	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4232:9:f_closedir	24	static
