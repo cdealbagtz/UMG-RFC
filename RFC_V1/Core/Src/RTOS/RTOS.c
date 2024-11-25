@@ -34,7 +34,7 @@ void init_task_100ms(void){
 }
 
 void init_task_500ms(void){
-	NRF24_init();
+
 }
 
 //////////////////////////////FUNCIONES PERIODICAS///////////////////////////////////////
@@ -59,8 +59,7 @@ void task_10ms(void){
 
 void task_50ms(void){
 	DeployParachute();
-	  TIM2->CCR4 = test;
-	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+
 }
 
 void task_100ms(void){
@@ -68,6 +67,6 @@ void task_100ms(void){
 }
 
 void task_500ms(void){
-
-
+	  TIM2->CCR4 = test;
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
 }

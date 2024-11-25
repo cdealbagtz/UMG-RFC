@@ -13,19 +13,25 @@
 
 #define FLASH_ADDR 0x08020000
 
-#define SIZEOFSTR  6
+#define SIZEOFSTR  8
 
 typedef struct MPU6050_Flash{
 	int16_t Ax_Offset, Ay_Offset, Az_Offset, Gx_Offset, Gy_Offset, Gz_Offset;
 }MPU6050_Flash_t;
 
 typedef struct BMP280_Flash{
-
+	int16_t Altitude_Calibration, Temp_Calibration;
 }BMP280_Flash_t;
+
+typedef struct Status_Flash{
+	uint8_t Reset_Number, Parachute_Deployment;
+}Status_Flash_t;
 
 typedef struct Flash_info{
 	MPU6050_Flash_t MPU6050_1;
 	MPU6050_Flash_t MPU6050_2;
+	BMP280_Flash_t BMP280;
+	Status_Flash_t STATUS;
 }Flash_Info_t;
 
 typedef union{
