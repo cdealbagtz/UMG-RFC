@@ -11,13 +11,9 @@
 #include "stm32f4xx.h"
 #include "File_Handling_RTOS.h"
 #include "Modules/Status/memory.h"
-#include "Global/Global.h"
 
 extern MEMORY_u MEMORY;
 
-
-
 void BlackBox_init(void);
-void BlackBox_SaveData(void);
 
 #endif /* INC_BLACKBOX_BLACKBOX_H_ */

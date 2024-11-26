@@ -51,15 +51,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h \
  ../FATFS/App/fatfs.h ../Middlewares/Third_Party/FatFs/src/ff.h \
  ../Middlewares/Third_Party/FatFs/src/integer.h ../FATFS/Target/ffconf.h \
  ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
+ ../Core/Inc/i2c.h ../Core/Inc/spi.h ../Core/Inc/tim.h \
+ ../Core/Inc/usart.h ../Core/Inc/gpio.h \
  ../Core/Inc/Modules/BlackBox/blackbox.h ../Core/Inc/File_Handling_RTOS.h \
- ../Core/Inc/fatfs_sd.h ../Core/Inc/Modules/Status/memory.h \
- ../Core/Inc/Global/Global.h ../Core/Inc/Libraries/BMP280.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/Libraries/NRF24.h
+ ../Core/Inc/fatfs_sd.h ../Core/Inc/Modules/Status/memory.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -114,6 +115,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+../Core/Inc/adc.h:
+../Core/Inc/main.h:
+../Core/Inc/dma.h:
 ../FATFS/App/fatfs.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../Middlewares/Third_Party/FatFs/src/integer.h:
@@ -122,11 +126,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FatFs/src/diskio.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../FATFS/Target/user_diskio.h:
+../Core/Inc/i2c.h:
+../Core/Inc/spi.h:
+../Core/Inc/tim.h:
+../Core/Inc/usart.h:
+../Core/Inc/gpio.h:
 ../Core/Inc/Modules/BlackBox/blackbox.h:
 ../Core/Inc/File_Handling_RTOS.h:
 ../Core/Inc/fatfs_sd.h:
 ../Core/Inc/Modules/Status/memory.h:
-../Core/Inc/Global/Global.h:
-../Core/Inc/Libraries/BMP280.h:
-../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/Libraries/NRF24.h:

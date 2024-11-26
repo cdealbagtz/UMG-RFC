@@ -7,9 +7,6 @@
 
 #include "Modules/INS/attitude.h"
 
-extern I2C_HandleTypeDef hi2c1;
-extern I2C_HandleTypeDef hi2c2;
-
 uint32_t timer;
 
 Kalman_t KalmanX = {

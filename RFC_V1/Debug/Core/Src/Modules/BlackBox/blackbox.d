@@ -60,9 +60,7 @@ Core/Src/Modules/BlackBox/blackbox.o: \
  ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
- ../Core/Inc/fatfs_sd.h ../Core/Inc/Modules/Status/memory.h \
- ../Core/Inc/Global/Global.h ../Core/Inc/Libraries/BMP280.h \
- ../Core/Inc/Libraries/MPU6050.h ../Core/Inc/Libraries/NRF24.h
+ ../Core/Inc/fatfs_sd.h ../Core/Inc/Modules/Status/memory.h
 ../Core/Inc/Modules/BlackBox/blackbox.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h:
@@ -129,7 +127,3 @@ Core/Src/Modules/BlackBox/blackbox.o: \
 ../FATFS/Target/user_diskio.h:
 ../Core/Inc/fatfs_sd.h:
 ../Core/Inc/Modules/Status/memory.h:
-../Core/Inc/Global/Global.h:
-../Core/Inc/Libraries/BMP280.h:
-../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/Libraries/NRF24.h:

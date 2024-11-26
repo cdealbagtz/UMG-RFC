@@ -13,9 +13,6 @@ MPU6050_modules_t MPU6050;
 const uint16_t i2c_timeout = 10;
 const double Accel_Z_corrector = 2048.0;
 
-extern I2C_HandleTypeDef hi2c1;
-extern I2C_HandleTypeDef hi2c2;
-
 void MPU6050_getPromModule(MPU6050_t *DataStruct){
 	int64_t Buffer = 0;
 	int32_t AuxBuffer[5] = {0};

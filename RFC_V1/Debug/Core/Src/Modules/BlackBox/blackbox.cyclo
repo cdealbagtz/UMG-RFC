@@ -1,2 +1,1 @@
-../Core/Src/Modules/BlackBox/blackbox.c:13:6:BlackBox_init	1
-../Core/Src/Modules/BlackBox/blackbox.c:40:6:BlackBox_SaveData	1
+../Core/Src/Modules/BlackBox/blackbox.c:12:6:BlackBox_init	1

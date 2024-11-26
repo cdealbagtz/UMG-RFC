@@ -43,14 +43,6 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Libraries/Flash.h \
- ../Core/Inc/RTOS/RTOS.h ../Core/Inc/Global/Global.h \
- ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/MPU6050.h \
- ../Core/Inc/Modules/Status/memory.h ../Core/Inc/Libraries/NRF24.h \
- ../Core/Inc/Modules/INS/attitude.h ../Core/Inc/Modules/Status/status.h \
- ../Core/Inc/Modules/Telemetry/payload.h \
- ../Core/Inc/Modules/BlackBox/blackbox.h ../Core/Inc/File_Handling_RTOS.h \
- ../FATFS/App/fatfs.h ../Middlewares/Third_Party/FatFs/src/ff.h \
- ../Middlewares/Third_Party/FatFs/src/integer.h ../FATFS/Target/ffconf.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
@@ -59,10 +51,12 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
- ../Middlewares/Third_Party/FatFs/src/diskio.h \
- ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
- ../Core/Inc/fatfs_sd.h
+ ../Core/Inc/RTOS/RTOS.h ../Core/Inc/Global/Global.h \
+ ../Core/Inc/Libraries/BMP280.h ../Core/Inc/Libraries/MPU6050.h \
+ ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/Modules/Status/memory.h \
+ ../Core/Inc/Libraries/NRF24.h ../Core/Inc/spi.h \
+ ../Core/Inc/Modules/INS/attitude.h ../Core/Inc/Modules/Status/status.h \
+ ../Core/Inc/Modules/Telemetry/payload.h ../Core/Inc/tim.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -109,21 +103,6 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../Core/Inc/Modules/Status/memory.h:
 ../Core/Inc/Libraries/Flash.h:
-../Core/Inc/RTOS/RTOS.h:
-../Core/Inc/Global/Global.h:
-../Core/Inc/Libraries/BMP280.h:
-../Core/Inc/Libraries/MPU6050.h:
-../Core/Inc/Modules/Status/memory.h:
-../Core/Inc/Libraries/NRF24.h:
-../Core/Inc/Modules/INS/attitude.h:
-../Core/Inc/Modules/Status/status.h:
-../Core/Inc/Modules/Telemetry/payload.h:
-../Core/Inc/Modules/BlackBox/blackbox.h:
-../Core/Inc/File_Handling_RTOS.h:
-../FATFS/App/fatfs.h:
-../Middlewares/Third_Party/FatFs/src/ff.h:
-../Middlewares/Third_Party/FatFs/src/integer.h:
-../FATFS/Target/ffconf.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
@@ -132,8 +111,16 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
-../Middlewares/Third_Party/FatFs/src/diskio.h:
-../Middlewares/Third_Party/FatFs/src/ff.h:
-../FATFS/Target/user_diskio.h:
-../Core/Inc/fatfs_sd.h:
+../Core/Inc/RTOS/RTOS.h:
+../Core/Inc/Global/Global.h:
+../Core/Inc/Libraries/BMP280.h:
+../Core/Inc/Libraries/MPU6050.h:
+../Core/Inc/i2c.h:
+../Core/Inc/main.h:
+../Core/Inc/Modules/Status/memory.h:
+../Core/Inc/Libraries/NRF24.h:
+../Core/Inc/spi.h:
+../Core/Inc/Modules/INS/attitude.h:
+../Core/Inc/Modules/Status/status.h:
+../Core/Inc/Modules/Telemetry/payload.h:
+../Core/Inc/tim.h:
