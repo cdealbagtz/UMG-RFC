@@ -1,0 +1,2 @@
+../Core/Src/Modules/Status/memory.c:13:6:MEMORY_init	1
+../Core/Src/Modules/Status/memory.c:20:6:MEMORY_write	1

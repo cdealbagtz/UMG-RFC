@@ -67,6 +67,5 @@ void task_100ms(void){
 }
 
 void task_500ms(void){
-	  TIM2->CCR4 = test;
-	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+
 }
