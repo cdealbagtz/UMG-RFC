@@ -93,7 +93,12 @@ void Error_Handler(void);
 #define MAG_SDA_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+typedef struct
+{
+	uint32_t time_pass;
+	uint32_t time_pass2;
+	int32_t valid;
+} channel_validation_t;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

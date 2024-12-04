@@ -1,1 +1,2 @@
-../Core/Src/Modules/Status/status.c:12:6:get_STATUS	1
+../Core/Src/Modules/Status/status.c:14:6:get_STATUS	5
+../Core/Src/Modules/Status/status.c:30:6:Emergency_actions	2

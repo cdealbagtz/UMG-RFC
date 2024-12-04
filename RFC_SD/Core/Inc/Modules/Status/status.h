@@ -19,6 +19,7 @@ typedef struct STATUS{
 
 extern status_t SYSTEM_STATUS;
 
+void Emergency_actions(void);
 void get_STATUS(void);
 
 #endif /* INC_MODULES_STATUS_STATUS_H_ */

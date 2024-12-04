@@ -67,7 +67,8 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t test = 0;
-uint32_t ICValue = 0;
+uint32_t channel_1_past;
+channel_validation_t channel_1_validation = {0};
 /* USER CODE END 0 */
 
 /**
@@ -122,7 +123,6 @@ int main(void)
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   HAL_TIM_Base_Start_IT(&htim5);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
-  HAL_TIM_IC_Start(&htim1, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -141,6 +141,7 @@ int main(void)
 			MPU6050_calibration();
 			test=0;
 		}
+		Emergency_actions();
   }
   /* USER CODE END 3 */
 }
@@ -192,13 +193,50 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+void PWM_Process_Input(TIM_HandleTypeDef* htim, uint32_t channel, channel_validation_t* channel_validation, uint32_t* radio_pwm_channel)
+{
+	// Se almacena el valor pasado
+    channel_validation->time_pass = channel_validation->time_pass2;
+    // Se captura el nuevo valor
+    channel_validation->time_pass2 = HAL_TIM_ReadCapturedValue(htim, channel);
+    // Si el valor pasado es mayor al nuevo
+    if (channel_validation->time_pass > channel_validation->time_pass2)
+    {
+    	//Se obtiene el valor restando al mayor el menor
+        channel_validation->valid = channel_validation->time_pass - channel_validation->time_pass2;
+
+        if(channel_validation->valid >= 800 && channel_validation->valid <= 2100)
+        {
+            *radio_pwm_channel = channel_validation->valid;
+        }
+        else if(channel_validation->valid >= 2100)
+        {
+        	//*radio_pwm_channel = MAX_RADIO_PWM_VALUE - channel_validation->valid;
+        }
+
+    }
+    //Si valor nuevo es mayor al pasado
+    else if (channel_validation->time_pass < channel_validation->time_pass2)
+    {
+        channel_validation->valid = channel_validation->time_pass2 - channel_validation->time_pass;
+        if (channel_validation->valid >= 800 && channel_validation->valid <= 2100)
+        {
+            *radio_pwm_channel = channel_validation->time_pass2 - channel_validation->time_pass;
+        }
+        else if (channel_validation->valid >= 2100)
+        {
+            //*radio_pwm_channel = MAX_RADIO_PWM_VALUE - channel_validation->valid;
+        }
+    }
+}
+
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 
 	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)  // If the interrupt is triggered by channel 1
 	{
 		// Read the IC value
-		ICValue = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
+		PWM_Process_Input(htim, TIM_CHANNEL_2, &channel_1_validation, &channel_1_past);
 	}
 }
 

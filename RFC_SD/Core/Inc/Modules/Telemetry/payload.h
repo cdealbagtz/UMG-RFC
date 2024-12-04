@@ -19,6 +19,7 @@
 
 #define Desp_Ang		0x01
 #define Desp_Alt		0x02
+#define Desp_RC			0x04
 
 void DeployParachute(void);
 

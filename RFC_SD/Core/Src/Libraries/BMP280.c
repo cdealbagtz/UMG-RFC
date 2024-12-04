@@ -131,6 +131,8 @@ void BMP280_init(void){
 }
 
 void BMP280_calculate(void){
+	BMP280.ID = 0;
+	BMP280.ID = BMP280_read(0x89);
 	BMP280_readRawValues();
 	BMP280.Temp = BMP280_measureT(T_raw);
 	BMP280.Pressure    		= BMP280_measureP(P_raw)/256;
