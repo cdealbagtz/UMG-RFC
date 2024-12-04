@@ -24,7 +24,6 @@
 #include "i2c.h"
 #include "spi.h"
 #include "tim.h"
-#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -68,6 +67,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t test = 0;
+uint32_t ICValue = 0;
 /* USER CODE END 0 */
 
 /**
@@ -107,10 +107,10 @@ int main(void)
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_SPI3_Init();
-  MX_USART1_UART_Init();
   MX_TIM2_Init();
   MX_FATFS_Init();
   MX_TIM5_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   MEMORY_init();
   BLACKBOX_Init();
@@ -118,8 +118,11 @@ int main(void)
   BMP280_init();
 
   TIM2->CCR4 = 1500;
+
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   HAL_TIM_Base_Start_IT(&htim5);
+  HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
+  HAL_TIM_IC_Start(&htim1, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -188,6 +191,17 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+
+	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)  // If the interrupt is triggered by channel 1
+	{
+		// Read the IC value
+		ICValue = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
+	}
+}
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	BLACKBOX_StoreData();

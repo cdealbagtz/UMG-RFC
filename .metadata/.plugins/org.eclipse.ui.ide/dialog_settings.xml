@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Chris\Documents\UMG-RFC\RFC_SD"/>
 			<item value="C:\Users\Chris\Downloads\Huul_L_OsoCatapultoso_08102024\Huul_L"/>
 			<item value="C:\Users\Chris\Downloads\Huul_L_OsoCatapultoso_08102024"/>
 		</list>

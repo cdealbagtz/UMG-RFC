@@ -81,10 +81,6 @@ void Error_Handler(void);
 #define BMP_MOSI_GPIO_Port GPIOB
 #define MAG_SCL_Pin GPIO_PIN_8
 #define MAG_SCL_GPIO_Port GPIOA
-#define GPS_TX_Pin GPIO_PIN_9
-#define GPS_TX_GPIO_Port GPIOA
-#define GPS_RX_Pin GPIO_PIN_10
-#define GPS_RX_GPIO_Port GPIOA
 #define uLed_Pin GPIO_PIN_11
 #define uLed_GPIO_Port GPIOA
 #define NRF_CE_Pin GPIO_PIN_15
