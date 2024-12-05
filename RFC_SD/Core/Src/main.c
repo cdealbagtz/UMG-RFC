@@ -121,7 +121,7 @@ int main(void)
   TIM2->CCR4 = 1500;
 
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
-  HAL_TIM_Base_Start_IT(&htim5);
+
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
   /* USER CODE END 2 */
 

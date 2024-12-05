@@ -10,6 +10,8 @@
 #include "Libraries/MPU6050.h"
 #include "Modules/Status/memory.h"
 #include "Modules/BlackBox/BlackBox.h"
+#include "tim.h"
+
 FATFS fs;  // file system
 FIL fil; // File
 FILINFO fno;
@@ -60,6 +62,13 @@ void BLACKBOX_Init(void){
 	  fresult = f_lseek(&fil , f_size(&fil));
 	  f_printf(&fil,"Nmsg,AccX,AccY,AccZ,GyroX,GyroY,GyroZ,AngX,AngY,Alt,Pressure,Temp,Parachute,Peripheral\n");
 	  f_close(&fil);
+
+	  if(fresult == FR_OK){
+		HAL_TIM_Base_Start_IT(&htim5);
+	  }
+	  else{
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, SET);
+	  }
 }
 
 void BLACKBOX_NewFile(void){

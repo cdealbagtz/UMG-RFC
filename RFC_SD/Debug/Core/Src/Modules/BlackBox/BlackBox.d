@@ -42,7 +42,7 @@ Core/Src/Modules/BlackBox/BlackBox.o: \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/Modules/Status/memory.h \
  ../Core/Inc/Libraries/Flash.h ../Core/Inc/Modules/BlackBox/BlackBox.h \
  ../Core/Inc/Global/Global.h ../Core/Inc/Libraries/NRF24.h \
- ../Core/Inc/spi.h
+ ../Core/Inc/spi.h ../Core/Inc/tim.h
 ../FATFS/App/fatfs.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../Middlewares/Third_Party/FatFs/src/integer.h:
@@ -95,3 +95,4 @@ Core/Src/Modules/BlackBox/BlackBox.o: \
 ../Core/Inc/Global/Global.h:
 ../Core/Inc/Libraries/NRF24.h:
 ../Core/Inc/spi.h:
+../Core/Inc/tim.h:
